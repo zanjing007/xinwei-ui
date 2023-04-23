@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <hm-button type="primary">按钮</hm-button>
+    <examples></examples>
   </div>
 </template>
 
 <script>
-
+import examples from './components/examples.vue'
 export default {
+  components: {
+    examples
+  }
 }
 </script>
 

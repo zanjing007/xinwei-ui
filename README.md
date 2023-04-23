@@ -45,12 +45,12 @@
 
 - 安装组件库
 
-    yarn add heima-ui
+    npm install xinwei-ui
 
 - 全局导入
 
-    import HeimaUI from 'heima-ui'
-    import 'heima-ui/lib/heimui.css'
+    import XinweiUI from 'xinwei-ui'
+    import 'xinwei-ui/lib/heimui.css'
     
     Vue.use(HeimaUI)
 
@@ -58,42 +58,40 @@
 
     <template>
       <div id="app">
-        <hm-button type="success" @click="visible=true">显示登录框</hm-button>
-        <hm-dialog title="用户登录" :visible.sync="visible" width="30%">
-          <hm-form :model="model" label-width="80px">
-            <hm-form-item label="用户名">
-              <hm-input v-model="model.username" placeholder="请输入用户名" clearable></hm-input>
-            </hm-form-item>
-            <hm-form-item label="用户密码">
-              <hm-input v-model="model.password" placeholder="请输入用户密码" show-password></hm-input>
-            </hm-form-item>
-            <hm-form-item label="即时配送">
-              <hm-switch v-model="model.soon" active-color="green" inactive-color="red"></hm-switch>
-            </hm-form-item>
-            <hm-form-item label="爱好">
-              <hm-checkbox-group v-model="model.hobby">
-                <hm-checkbox label="篮球"></hm-checkbox>
-                <hm-checkbox label="足球"></hm-checkbox>
-                <hm-checkbox label="乒乓球"></hm-checkbox>
-              </hm-checkbox-group>
-            </hm-form-item>
-            <hm-form-item label="性别">
-              <hm-radio-group v-model="model.gender">
-                <hm-radio label="1">男</hm-radio>
-                <hm-radio label="0">女</hm-radio>
-              </hm-radio-group>
-            </hm-form-item>
-          </hm-form>
+        <xw-button type="success" @click="visible=true">显示登录框</xw-button>
+        <xw-dialog title="用户登录" :visible.sync="visible" width="30%">
+          <xw-form :model="model" label-width="80px">
+            <xw-form-item label="用户名">
+              <xw-input v-model="model.username" placeholder="请输入用户名" clearable></xw-input>
+            </xw-form-item>
+            <xw-form-item label="用户密码">
+              <xw-input v-model="model.password" placeholder="请输入用户密码" show-password></xw-input>
+            </xw-form-item>
+            <xw-form-item label="即时配送">
+              <xw-switch v-model="model.soon" active-color="green" inactive-color="red"></xw-switch>
+            </xw-form-item>
+            <xw-form-item label="爱好">
+              <xw-checkbox-group v-model="model.hobby">
+                <xw-checkbox label="篮球"></xw-checkbox>
+                <xw-checkbox label="足球"></xw-checkbox>
+                <xw-checkbox label="乒乓球"></xw-checkbox>
+              </xw-checkbox-group>
+            </xw-form-item>
+            <xw-form-item label="性别">
+              <xw-radio-group v-model="model.gender">
+                <xw-radio label="1">男</xw-radio>
+                <xw-radio label="0">女</xw-radio>
+              </xw-radio-group>
+            </xw-form-item>
+          </xw-form>
           <template v-slot:footer>
-            <hm-button type="primary" @click="login">登录</hm-button>
-            <hm-button @click="visible=false">取消</hm-button>
+            <xw-button type="primary" @click="login">登录</xw-button>
+            <xw-button @click="visible=false">取消</xw-button>
           </template>
-        </hm-dialog>
+        </xw-dialog>
       </div>
     </template>
     
-
-
 
 常见组件封装
 
@@ -102,13 +100,13 @@
 使用vue-cli脚手架快速搭建一个vue项目
 
     // 选择scss babel 和 eslint
-    vue create itcast-ui
+    vue create xinwei-ui
     
 
 启动项目
 
-    cd itcast-ui
-    yarn serve
+    cd xinwei-ui
+    npm run serve
     
 
 button组件
@@ -138,7 +136,7 @@ button组件
 基本结构
 
     <template>
-      <button class="hm-button">
+      <button class="xw-button">
         <span><slot></slot></span>
       </button>
     </template>
@@ -146,7 +144,7 @@ button组件
 
 样式
 
-    .hm-button {
+    .xw-button {
       display: inline-block;
       line-height: 1;
       white-space: nowrap;
@@ -181,7 +179,7 @@ type属性
 
 结构
 
-    <button class="hm-button" :class="[`hm-button--${type}`]">
+    <button class="xw-button" :class="[`xw-button--${type}`]">
     
 
 js
@@ -196,7 +194,7 @@ js
 
 样式
 
-    .hm-button--primary {
+    .xw-button--primary {
       color: #fff;
       background-color: #409eff;
       border-color: #409eff;
@@ -208,7 +206,7 @@ js
         color: #fff;
       }
     }
-    .hm-button--success {
+    .xw-button--success {
       color: #fff;
       background-color: #67c23a;
       border-color: #67c23a;
@@ -219,7 +217,7 @@ js
         color: #fff;
       }
     }
-    .hm-button--info {
+    .xw-button--info {
       color: #fff;
       background-color: #909399;
       border-color: #909399;
@@ -230,7 +228,7 @@ js
         color: #fff;
       }
     }
-    .hm-button--warning {
+    .xw-button--warning {
       color: #fff;
       background-color: #e6a23c;
       border-color: #e6a23c;
@@ -241,7 +239,7 @@ js
         color: #fff;
       }
     }
-    .hm-button--danger {
+    .xw-button--danger {
       color: #fff;
       background-color: #f56c6c;
       border-color: #f56c6c;
@@ -257,7 +255,7 @@ js
 plain属性
 
     // 朴素的按钮
-    .hm-button.is-plain {
+    .xw-button.is-plain {
       &:hover,
       &:focus {
         background: #fff;
@@ -265,7 +263,7 @@ plain属性
         color: #409eff;
       }
     }
-    .hm-button--primary.is-plain {
+    .xw-button--primary.is-plain {
       color: #409eff;
       background: #ecf5ff;
       border-color: #b3d8ff;
@@ -276,7 +274,7 @@ plain属性
         color: #fff;
       }
     }
-    .hm-button--success.is-plain {
+    .xw-button--success.is-plain {
       color: #67c23a;
       background: #f0f9eb;
       border-color: #c2e7b0;
@@ -288,7 +286,7 @@ plain属性
       }
     }
     
-    .hm-button--info.is-plain {
+    .xw-button--info.is-plain {
       color: #909399;
       background: #f4f4f5;
       border-color: #d3d4d6;
@@ -299,7 +297,7 @@ plain属性
         color: #fff;
       }
     }
-    .hm-button--warning.is-plain {
+    .xw-button--warning.is-plain {
       color: #e6a23c;
       background: #fdf6ec;
       border-color: #f5dab1;
@@ -310,7 +308,7 @@ plain属性
         color: #fff;
       }
     }
-    .hm-button--danger.is-plain {
+    .xw-button--danger.is-plain {
       color: #f56c6c;
       background: #fef0f0;
       border-color: #fbc4c4;
@@ -325,7 +323,7 @@ plain属性
 
 round属性
 
-    .hm-button.is-round {
+    .xw-button.is-round {
       border-radius: 20px;
       padding: 12px 23px;
     }
@@ -334,7 +332,7 @@ round属性
 circle属性
 
     // 原形按钮
-    .hm-button.is-circle {
+    .xw-button.is-circle {
       border-radius: 50%;
       padding: 12px;
     }
@@ -364,7 +362,7 @@ js
 样式
 
     // 按钮后的文本
-    .hm-button [class*=hm-icon-]+span {
+    .xw-button [class*=xw-icon-]+span {
         margin-left: 5px;
     }
     
@@ -378,7 +376,7 @@ js
 
 - 结构
 
-      <button class="hm-button" :class="[`hm-button--${type}`, {
+      <button class="xw-button" :class="[`xw-button--${type}`, {
         'is-plain': plain,
         'is-round': round,
         'is-circle': circle,
@@ -392,60 +390,60 @@ js
 - 样式
 
     // 禁用
-    .hm-button.is-disabled,
-    .hm-button.is-disabled:focus,
-    .hm-button.is-disabled:hover {
+    .xw-button.is-disabled,
+    .xw-button.is-disabled:focus,
+    .xw-button.is-disabled:hover {
         color: #c0c4cc;
         cursor: not-allowed;
         background-image: none;
         background-color: #fff;
         border-color: #ebeef5;
     }
-    .hm-button.is-disabled,
-    .hm-button.is-disabled:focus,
-    .hm-button.is-disabled:hover {
+    .xw-button.is-disabled,
+    .xw-button.is-disabled:focus,
+    .xw-button.is-disabled:hover {
         color: #c0c4cc;
         cursor: not-allowed;
         background-image: none;
         background-color: #fff;
         border-color: #ebeef5;
     }
-    .hm-button--primary.is-disabled,
-    .hm-button--primary.is-disabled:active,
-    .hm-button--primary.is-disabled:focus,
-    .hm-button--primary.is-disabled:hover {
+    .xw-button--primary.is-disabled,
+    .xw-button--primary.is-disabled:active,
+    .xw-button--primary.is-disabled:focus,
+    .xw-button--primary.is-disabled:hover {
         color: #fff;
         background-color: #a0cfff;
         border-color: #a0cfff;
     }
-    .hm-button--success.is-disabled,
-    .hm-button--success.is-disabled:active,
-    .hm-button--success.is-disabled:focus,
-    .hm-button--success.is-disabled:hover {
+    .xw-button--success.is-disabled,
+    .xw-button--success.is-disabled:active,
+    .xw-button--success.is-disabled:focus,
+    .xw-button--success.is-disabled:hover {
         color: #fff;
         background-color: #b3e19d;
         border-color: #b3e19d;
     }
-    .hm-button--info.is-disabled,
-    .hm-button--info.is-disabled:active,
-    .hm-button--info.is-disabled:focus,
-    .hm-button--info.is-disabled:hover {
+    .xw-button--info.is-disabled,
+    .xw-button--info.is-disabled:active,
+    .xw-button--info.is-disabled:focus,
+    .xw-button--info.is-disabled:hover {
         color: #fff;
         background-color: #c8c9cc;
         border-color: #c8c9cc;
     }
-    .hm-button--warning.is-disabled,
-    .hm-button--warning.is-disabled:active,
-    .hm-button--warning.is-disabled:focus,
-    .hm-button--warning.is-disabled:hover {
+    .xw-button--warning.is-disabled,
+    .xw-button--warning.is-disabled:active,
+    .xw-button--warning.is-disabled:focus,
+    .xw-button--warning.is-disabled:hover {
         color: #fff;
         background-color: #f3d19e;
         border-color: #f3d19e;
     }
-    .hm-button--danger.is-disabled,
-    .hm-button--danger.is-disabled:active,
-    .hm-button--danger.is-disabled:focus,
-    .hm-button--danger.is-disabled:hover {
+    .xw-button--danger.is-disabled,
+    .xw-button--danger.is-disabled:active,
+    .xw-button--danger.is-disabled:focus,
+    .xw-button--danger.is-disabled:hover {
         color: #fff;
         background-color: #fab6b6;
         border-color: #fab6b6;
@@ -505,20 +503,20 @@ dialog组件
 结构
 
     <template>
-      <div class="hm-dialog__wrapper">
-        <div class="hm-dialog">
-          <div class="hm-dialog__header">
-            <span class="hm-dialog__title">提示</span>
-            <button class="hm-dialog__headerbtn">
-              <i class="hm-icon-close"></i>
+      <div class="xw-dialog__wrapper">
+        <div class="xw-dialog">
+          <div class="xw-dialog__header">
+            <span class="xw-dialog__title">提示</span>
+            <button class="xw-dialog__headerbtn">
+              <i class="xw-icon-close"></i>
             </button>
           </div>
-          <div class="hm-dialog__body">
+          <div class="xw-dialog__body">
             <span>这是一段信息</span>
           </div>
-          <div class="hm-dialog__footer">
-            <hm-button>取消</hm-button>
-            <hm-button type="primary">确定</hm-button>
+          <div class="xw-dialog__footer">
+            <xw-button>取消</xw-button>
+            <xw-button type="primary">确定</xw-button>
           </div>
         </div>
       </div>
@@ -527,7 +525,7 @@ dialog组件
 
 样式
 
-    .hm-dialog__wrapper {
+    .xw-dialog__wrapper {
       position: fixed;
       top: 0;
       right: 0;
@@ -538,7 +536,7 @@ dialog组件
       z-index: 2001;
       background-color: rgba(0,0,0, .5);
     
-      .hm-dialog {
+      .xw-dialog {
         position: relative;
         margin: 15vh auto 50px;
         background: #fff;
@@ -549,12 +547,12 @@ dialog组件
     
         &__header {
           padding: 20px 20px 10px;
-          .hm-dialog__title {
+          .xw-dialog__title {
             line-height: 24px;
             font-size: 18px;
             color: #303133;
           }
-          .hm-dialog__headerbtn {
+          .xw-dialog__headerbtn {
             position: absolute;
             top: 20px;
             right: 20px;
@@ -580,7 +578,7 @@ dialog组件
           padding: 10px 20px 20px;
           text-align: right;
           box-sizing: border-box;
-          .hm-button:first-child {
+          .xw-button:first-child {
             margin-right: 20px;
           }
         }
@@ -595,7 +593,7 @@ title属性既支持传入title属性，也只是传入title插槽
 结构
 
     <slot name="title">
-      <span class="hm-dialog__title">{{title}}</span>
+      <span class="xw-dialog__title">{{title}}</span>
     </slot>
     
 
@@ -613,7 +611,7 @@ width属性与top属性
 
 结构
 
-    <div class="hm-dialog" :style="style">
+    <div class="xw-dialog" :style="style">
     
 
 js
@@ -644,7 +642,7 @@ js
 
 内容插槽
 
-    <div class="hm-dialog__body">
+    <div class="xw-dialog__body">
       <!-- 默认插槽 -->
       <slot></slot>
     </div>
@@ -652,7 +650,7 @@ js
 
 底部插槽
 
-    <div class="hm-dialog__footer" v-if="$slots.footer">
+    <div class="xw-dialog__footer" v-if="$slots.footer">
       <slot name="footer"></slot>
     </div>
     
@@ -661,17 +659,17 @@ js
 
 结构
 
-    <div class="hm-dialog__wrapper" v-show="visible">
+    <div class="xw-dialog__wrapper" v-show="visible">
     
 
 点击遮罩层关闭
 
-    <div class="hm-dialog__wrapper" v-show="visible" @click.self="handleClose">
+    <div class="xw-dialog__wrapper" v-show="visible" @click.self="handleClose">
     
 
 点击关闭按钮关闭
 
-     <button class="hm-dialog__headerbtn" @click="handleClose">
+     <button class="xw-dialog__headerbtn" @click="handleClose">
     
 
 关闭处理
@@ -759,20 +757,20 @@ input组件
 节本结构
 
     <template>
-      <div class="hm-input">
-        <input type="text" class="hm-input__inner">
+      <div class="xw-input">
+        <input type="text" class="xw-input__inner">
       </div>
     </template>
     
 
 样式
 
-    .hm-input {
+    .xw-input {
       width: 100%;
       position: relative;
       font-size: 14px;
       display: inline-block;
-      .hm-input__inner {
+      .xw-input__inner {
         -webkit-appearance: none;
         background-color: #fff;
         background-image: none;
@@ -801,7 +799,7 @@ props处理placeholde, type,name
 
 - placeholer
 
-    <input type="text" class="hm-input__inner" :placeholder="placeholder">
+    <input type="text" class="xw-input__inner" :placeholder="placeholder">
     
 
       props: {
@@ -815,7 +813,7 @@ props处理placeholde, type,name
 - type属性-密码框
 
         <input
-          class="hm-input__inner"
+          class="xw-input__inner"
           :placeholder="placeholder"
           :type="type"
           :disabled="disabled"
@@ -834,9 +832,9 @@ props处理placeholde, type,name
 
 结构
 
-    <div class="hm-input">
+    <div class="xw-input">
       <input
-             class="hm-input__inner"
+             class="xw-input__inner"
              :class="{'is-disabled': disabled}"
              :placeholder="placeholder"
              :type="type"
@@ -872,16 +870,16 @@ v-model语法糖
     <input v-bind:value="mes"  v-on:input="mes= $event.target.value"/>
       
     给组件使用v-model指令,实质上相当于给组件传递了value属性以及监听了input事件
-    <hm-input v-model="msg">
+    <xw-input v-model="msg">
     等价与
-    <hm-input v-bind:value="mes"  v-on:input="mes= arguments[0]"/>
+    <xw-input v-bind:value="mes"  v-on:input="mes= arguments[0]"/>
     
 
 - html结构
 
-    <div class="hm-input">
+    <div class="xw-input">
       <input
-             class="hm-input__inner"
+             class="xw-input__inner"
              :class="{'is-disabled': disabled}"
              :placeholder="placeholder"
              :type="type"
@@ -911,9 +909,9 @@ clearable与show-password处理
 
 - 基本结构
 
-    <span class="hm-input__suffix">
-      <i class="hm-input__icon hm-icon-circle-close"></i>
-      <i class="hm-input__icon hm-icon-view"></i>
+    <span class="xw-input__suffix">
+      <i class="xw-input__icon xw-icon-circle-close"></i>
+      <i class="xw-input__icon xw-icon-view"></i>
     </span>
     
 
@@ -931,19 +929,19 @@ clearable与show-password处理
 
 - 控制按钮显示和隐藏
 
-    <span class="hm-input__suffix">
-      <i class="hm-input__icon hm-icon-circle-close" v-if="clearable"></i>
-      <i class="hm-input__icon hm-icon-view" v-if="showPassword"></i>
+    <span class="xw-input__suffix">
+      <i class="xw-input__icon xw-icon-circle-close" v-if="clearable"></i>
+      <i class="xw-input__icon xw-icon-view" v-if="showPassword"></i>
     </span>
     
 
 样式
 
-    .hm-input--suffix {
-      .hm-input__inner {
+    .xw-input--suffix {
+      .xw-input__inner {
         padding-right: 30px;
       }
-      .hm-input__suffix {
+      .xw-input__suffix {
         position: absolute;
         height: 100%;
         right: 10px;
@@ -963,11 +961,11 @@ clearable与show-password处理
     }
     
 
-- 控制hm-input--suffix的类名
+- 控制xw-input--suffix的类名
 
-    <div class="hm-input" :class="{'hm-input--suffix': this.clearable || this.showPassword}">
+    <div class="xw-input" :class="{'xw-input--suffix': this.clearable || this.showPassword}">
     
-    <span class="hm-input__suffix" v-if="this.clearable || this.showPassword">
+    <span class="xw-input__suffix" v-if="this.clearable || this.showPassword">
     
 
 - 使用计算属性优化
@@ -997,7 +995,7 @@ clearable与show-password处理
     },
       
     <input
-      class="hm-input__inner"
+      class="xw-input__inner"
       :class="{'is-disabled': disabled}"
       :placeholder="placeholder"
       :type="showPassword ? (passwordVisible ? 'text': 'password') : type"
@@ -1049,9 +1047,9 @@ switch组件
 - 页面
 
     <template>
-      <label class="hm-switch">
-        <span class="hm-switch__core">
-          <span class="hm-switch__button"></span>
+      <label class="xw-switch">
+        <span class="xw-switch__core">
+          <span class="xw-switch__button"></span>
         </span>
       </label>
     </template>
@@ -1059,7 +1057,7 @@ switch组件
 
 - 样式
 
-    .hm-switch {
+    .xw-switch {
       display: inline-flex;
       align-items: center;
       position: relative;
@@ -1067,7 +1065,7 @@ switch组件
       line-height: 20px;
       height: 20px;
       vertical-align: middle;
-      .hm-switch__core {
+      .xw-switch__core {
         margin: 0;
         display: inline-block;
         position: relative;
@@ -1081,7 +1079,7 @@ switch组件
         cursor: pointer;
         transition: border-color .3s,background-color .3s;
         vertical-align: middle;
-        .hm-switch__button {
+        .xw-switch__button {
           position: absolute;
           top: 1px;
           left: 1px;
@@ -1109,7 +1107,7 @@ v-mode双向绑定
 
 - 注册点击事件
 
-    <div class="hm-switch" @click="handleClick">
+    <div class="xw-switch" @click="handleClick">
     
 
 - 事件处理程序
@@ -1123,11 +1121,11 @@ v-mode双向绑定
 
 - 选中样式
 
-    .hm-switch.is-checked {
-      .hm-switch__core {
+    .xw-switch.is-checked {
+      .xw-switch__core {
         border-color: #409eff;
         background-color: #409eff;
-        .hm-switch__button {
+        .xw-switch__button {
           transform: translateX(20px);
         }
       }
@@ -1136,18 +1134,18 @@ v-mode双向绑定
 
 - 控制选中样式
 
-    <div class="hm-switch" @click="handleClick" :class="{'is-checked': value}">
+    <div class="xw-switch" @click="handleClick" :class="{'is-checked': value}">
     
 
 自定义颜色
 
 在使用switch时，希望能够自定义开关的颜色
 
-    <hm-switch
+    <xw-switch
       v-model="value"
       active-color="#13ce66"
       inactive-color="#ff4949">
-    </hm-switch>
+    </xw-switch>
     
 
 - props接收
@@ -1198,14 +1196,14 @@ name属性支持
 - 结构
 
     <input
-      class="hm-switch__input"
+      class="xw-switch__input"
       type="checkbox"
     >
     
 
 - 样式
 
-    .hm-switch__input {
+    .xw-switch__input {
       position: absolute;
       width: 0;
       height: 0;
@@ -1256,15 +1254,15 @@ radio组件
 - html结构
 
     <template>
-      <label class="hm-radio">
-        <span class="hm-radio__input">
-          <span class="hm-radio__inner"></span>
+      <label class="xw-radio">
+        <span class="xw-radio__input">
+          <span class="xw-radio__inner"></span>
           <input
-            class="hm-radio__original"
+            class="xw-radio__original"
             type="radio"
           >
         </span>
-        <span class="hm-radio__label">
+        <span class="xw-radio__label">
           我是label
         </span>
       </label>
@@ -1273,7 +1271,7 @@ radio组件
 
 - 样式
 
-    .hm-radio {
+    .xw-radio {
       color: #606266;
       font-weight: 500;
       line-height: 1;
@@ -1287,7 +1285,7 @@ radio组件
       -moz-user-select: none;
       -webkit-user-select: none;
       -ms-user-select: none;
-      .hm-radio__input {
+      .xw-radio__input {
         white-space: nowrap;
         cursor: pointer;
         outline: none;
@@ -1295,7 +1293,7 @@ radio组件
         line-height: 1;
         position: relative;
         vertical-align: middle;
-        .hm-radio__inner {
+        .xw-radio__inner {
           border: 1px solid #dcdfe6;
           border-radius: 100%;
           width: 14px;
@@ -1318,7 +1316,7 @@ radio组件
             transition: transform .15s ease-in;
           }
         }
-        .hm-radio__original {
+        .xw-radio__original {
           opacity: 0;
           outline: none;
           position: absolute;
@@ -1330,7 +1328,7 @@ radio组件
           margin: 0;
         }
       }
-      .hm-radio__label {
+      .xw-radio__label {
         font-size: 14px;
         padding-left: 10px;
       }
@@ -1339,9 +1337,9 @@ radio组件
 
 选中的样式
 
-    .hm-radio.is-checked {
-      .hm-radio__input {
-        .hm-radio__inner {
+    .xw-radio.is-checked {
+      .xw-radio__input {
+        .xw-radio__inner {
           border-color: #409eff;
           background: #409eff;
           &:after {
@@ -1349,7 +1347,7 @@ radio组件
           }
         }
       }
-      .hm-radio__label {
+      .xw-radio__label {
         color: #409eff;
       }
     }
@@ -1373,7 +1371,7 @@ label与插槽的处理
 
 - 处理插槽
 
-    <span class="hm-radio__label">
+    <span class="xw-radio__label">
       <slot></slot>
       <!-- 如果没有插槽内容，那么label就是内容 -->
       <template v-if="!$slots.default">{{label}}</template>
@@ -1397,7 +1395,7 @@ v-model处理
 - 结构
 
     <input
-      class="hm-radio__original"
+      class="xw-radio__original"
       type="radio"
       :name="name"
       value="label"
@@ -1422,7 +1420,7 @@ v-model处理
 
 - 控制选中样式
 
-    <label class="hm-radio" :class="{'is-checked': model === label}">
+    <label class="xw-radio" :class="{'is-checked': model === label}">
     
     
 
@@ -1503,12 +1501,12 @@ checkbox组件
 基本结构
 
     <template>
-      <label class="hm-checkbox">
-        <span class="hm-checkbox__input">
-          <span class="hm-checkbox__inner"></span>
-          <input type="checkbox" class="hm-checkbox__original">
+      <label class="xw-checkbox">
+        <span class="xw-checkbox__input">
+          <span class="xw-checkbox__inner"></span>
+          <input type="checkbox" class="xw-checkbox__original">
         </span>
-        <span class="hm-checkbox__label">
+        <span class="xw-checkbox__label">
           <slot></slot>
           <template v-if="!$slots.default">{{label}}</template>
         </span>
@@ -1519,7 +1517,7 @@ checkbox组件
 
 样式
 
-    .hm-checkbox {
+    .xw-checkbox {
       color: #606266;
       font-weight: 500;
       font-size: 14px;
@@ -1529,7 +1527,7 @@ checkbox组件
       white-space: nowrap;
       user-select: none;
       margin-right: 30px;
-      .hm-checkbox__input {
+      .xw-checkbox__input {
         white-space: nowrap;
         cursor: pointer;
         outline: none;
@@ -1537,7 +1535,7 @@ checkbox组件
         line-height: 1;
         position: relative;
         vertical-align: middle;
-        .hm-checkbox__inner {
+        .xw-checkbox__inner {
           display: inline-block;
           position: relative;
           border: 1px solid #dcdfe6;
@@ -1564,7 +1562,7 @@ checkbox组件
             transform-origin: center;
           }
         }
-        .hm-checkbox__original {
+        .xw-checkbox__original {
           opacity: 0;
           outline: none;
           position: absolute;
@@ -1575,7 +1573,7 @@ checkbox组件
           z-index: -1;
         }
       }
-      .hm-checkbox__label {
+      .xw-checkbox__label {
         display: inline-block;
         padding-left: 10px;
         line-height: 19px;
@@ -1587,9 +1585,9 @@ checkbox组件
 
 选中的样式
 
-    .hm-checkbox.is-checked {
-      .hm-checkbox__input {
-        .hm-checkbox__inner {
+    .xw-checkbox.is-checked {
+      .xw-checkbox__input {
+        .xw-checkbox__inner {
           background-color: #409eff;
           border-color: #409eff;
           &:after {
@@ -1597,7 +1595,7 @@ checkbox组件
           }
         }
       }
-      .hm-checkbox__label {
+      .xw-checkbox__label {
         color: #409eff;
       }
     }
@@ -1625,7 +1623,7 @@ checkbox组件
 
 - 控制label
 
-    <span class="hm-checkbox__label">
+    <span class="xw-checkbox__label">
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -1647,7 +1645,7 @@ checkbox组件
 
 - 判断是否选中
 
-    <label class="hm-checkbox" :class="{'is-checked': value}">
+    <label class="xw-checkbox" :class="{'is-checked': value}">
     
     
 
@@ -1658,7 +1656,7 @@ checkbox-group组件
 结构
 
     <template>
-      <div class="hm-checkbox-group">
+      <div class="xw-checkbox-group">
         <slot></slot>
       </div>
     </template>
@@ -1732,7 +1730,7 @@ form组件
 基本结构
 
     <template>
-      <div class="hm-form">
+      <div class="xw-form">
         <slot></slot>
       </div>
     </template>
@@ -1769,9 +1767,9 @@ form-item组件
 基本结构
 
     <template>
-      <div class="hm-form-item">
-        <label class="hm-form-item__label" :style="labelStyle">{{label}}</label>
-        <div class="hm-form-item__content">
+      <div class="xw-form-item">
+        <label class="xw-form-item__label" :style="labelStyle">{{label}}</label>
+        <div class="xw-form-item__content">
           <slot></slot>
         </div>
       </div>
@@ -1798,9 +1796,9 @@ form-item组件
     </script>
     
     <style lang="scss">
-    .hm-form-item {
+    .xw-form-item {
       margin-bottom: 25px;
-      .hm-form-item__label {
+      .xw-form-item__label {
         text-align: right;
         vertical-align: middle;
         float: left;
@@ -1810,7 +1808,7 @@ form-item组件
         padding: 0 12px 0 0;
         box-sizing: border-box;
       }
-      .hm-form-item__content {
+      .xw-form-item__content {
         line-height: 40px;
         position: relative;
         font-size: 14px;
@@ -1821,6 +1819,8 @@ form-item组件
     
     
     
+
+
 
 
 
@@ -1926,9 +1926,9 @@ vue.config.js配置
     import Vue from 'vue'
     import App from './App.vue'
     
-    import HeimaUI from '../packages'
+    import XinweiUI from '../packages'
     
-    Vue.use(HeimaUI)
+    Vue.use(XinweiUI)
     
     Vue.config.productionTip = false
     
@@ -1968,7 +1968,7 @@ vue.config.js配置
     "private": false,
     "main": "dist/itcast-ui.umd.min.js",
     "author": {
-      "name": "胡聪聪"
+      "name": "czj"
     },
     
     

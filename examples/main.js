@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import HeimaUI from '../packages'
+import XinweiUI from '../packages'
 Vue.config.productionTip = false
-Vue.use(HeimaUI)
+Vue.use(XinweiUI)
 
 new Vue({
   render: h => h(App)

@@ -1,16 +1,16 @@
 <template>
-  <label class="hm-checkbox" :class="{'is-checked': isChecked}">
-    <span class="hm-checkbox__input">
-      <span class="hm-checkbox__inner"></span>
+  <label class="xw-checkbox" :class="{'is-checked': isChecked}">
+    <span class="xw-checkbox__input">
+      <span class="xw-checkbox__inner"></span>
       <input
         type="checkbox"
-        class="hm-checkbox__original"
+        class="xw-checkbox__original"
         :name="name"
         v-model="model"
         :value="label"
       >
     </span>
-    <span class="hm-checkbox__label">
+    <span class="xw-checkbox__label">
       <slot></slot>
       <template v-if="!$slots.default">{{label}}</template>
     </span>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'HmCheckbox',
+  name: 'XwCheckbox',
   inject: {
     CheckboxGroup: {
       default: ''
@@ -61,7 +61,7 @@ export default {
 </script>
 
 <style lang="scss">
-.hm-checkbox {
+.xw-checkbox {
   color: #606266;
   font-weight: 500;
   font-size: 14px;
@@ -71,7 +71,7 @@ export default {
   white-space: nowrap;
   user-select: none;
   margin-right: 30px;
-  .hm-checkbox__input {
+  .xw-checkbox__input {
     white-space: nowrap;
     cursor: pointer;
     outline: none;
@@ -79,7 +79,7 @@ export default {
     line-height: 1;
     position: relative;
     vertical-align: middle;
-    .hm-checkbox__inner {
+    .xw-checkbox__inner {
       display: inline-block;
       position: relative;
       border: 1px solid #dcdfe6;
@@ -106,7 +106,7 @@ export default {
         transform-origin: center;
       }
     }
-    .hm-checkbox__original {
+    .xw-checkbox__original {
       opacity: 0;
       outline: none;
       position: absolute;
@@ -117,16 +117,16 @@ export default {
       z-index: -1;
     }
   }
-  .hm-checkbox__label {
+  .xw-checkbox__label {
     display: inline-block;
     padding-left: 10px;
     line-height: 19px;
     font-size: 14px;
   }
 }
-.hm-checkbox.is-checked {
-  .hm-checkbox__input {
-    .hm-checkbox__inner {
+.xw-checkbox.is-checked {
+  .xw-checkbox__input {
+    .xw-checkbox__inner {
       background-color: #409eff;
       border-color: #409eff;
       &:after {
@@ -134,7 +134,7 @@ export default {
       }
     }
   }
-  .hm-checkbox__label {
+  .xw-checkbox__label {
     color: #409eff;
   }
 }

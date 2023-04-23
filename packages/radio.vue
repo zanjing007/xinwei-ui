@@ -1,16 +1,16 @@
 <template>
-  <label class="hm-radio" :class="{'is-checked': label === model}">
-    <span class="hm-radio__input">
-      <span class="hm-radio__inner"></span>
+  <label class="xw-radio" :class="{'is-checked': label === model}">
+    <span class="xw-radio__input">
+      <span class="xw-radio__inner"></span>
       <input
-        class="hm-radio__original"
+        class="xw-radio__original"
         type="radio"
         :value="label"
         :name="name"
         v-model="model"
       >
     </span>
-    <span class="hm-radio__label">
+    <span class="xw-radio__label">
       <slot></slot>
       <!-- 如果没有传内容，我们就把label当成内容 -->
       <template v-if="!$slots.default">{{label}}</template>
@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  name: 'HmRadio',
+  name: 'XwRadio',
   // 需要提供一个计算属性 model
   inject: {
     RadioGroup: {
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style lang="scss">
-.hm-radio {
+.xw-radio {
   color: #606266;
   font-weight: 500;
   line-height: 1;
@@ -73,7 +73,7 @@ export default {
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
-  .hm-radio__input {
+  .xw-radio__input {
     white-space: nowrap;
     cursor: pointer;
     outline: none;
@@ -81,7 +81,7 @@ export default {
     line-height: 1;
     position: relative;
     vertical-align: middle;
-    .hm-radio__inner {
+    .xw-radio__inner {
       border: 1px solid #dcdfe6;
       border-radius: 100%;
       width: 14px;
@@ -104,7 +104,7 @@ export default {
         transition: transform .15s ease-in;
       }
     }
-    .hm-radio__original {
+    .xw-radio__original {
       opacity: 0;
       outline: none;
       position: absolute;
@@ -116,15 +116,15 @@ export default {
       margin: 0;
     }
   }
-  .hm-radio__label {
+  .xw-radio__label {
     font-size: 14px;
     padding-left: 10px;
   }
 }
 
-.hm-radio.is-checked {
-  .hm-radio__input {
-    .hm-radio__inner {
+.xw-radio.is-checked {
+  .xw-radio__input {
+    .xw-radio__inner {
       border-color: #409eff;
       background: #409eff;
       &:after {
@@ -132,7 +132,7 @@ export default {
       }
     }
   }
-  .hm-radio__label {
+  .xw-radio__label {
     color: #409eff;
   }
 }

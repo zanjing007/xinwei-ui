@@ -1,21 +1,21 @@
 <template>
   <!-- 对话框的遮罩 .self代表只有点击自己才触发 -->
   <transition name="dialog-fade">
-    <div class="hm-dialog__wrapper" v-show="visible" @click.self="handleClose">
-      <div class="hm-dialog" :style="{width, marginTop: top}">
-        <div class="hm-dialog__header">
+    <div class="xw-dialog__wrapper" v-show="visible" @click.self="handleClose">
+      <div class="xw-dialog" :style="{width, marginTop: top}">
+        <div class="xw-dialog__header">
           <slot name="title">
-            <span class="hm-dialog__title">{{title}}</span>
+            <span class="xw-dialog__title">{{title}}</span>
           </slot>
-          <button class="hm-dialog__headerbtn" @click="handleClose">
+          <button class="xw-dialog__headerbtn" @click="handleClose">
             <i class="hm-icon-close"></i>
           </button>
         </div>
-        <div class="hm-dialog__body">
+        <div class="xw-dialog__body">
           <!-- 默认插槽 -->
           <slot></slot>
         </div>
-        <div class="hm-dialog__footer" v-if="$slots.footer">
+        <div class="xw-dialog__footer" v-if="$slots.footer">
           <slot name="footer"></slot>
         </div>
       </div>
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  name: 'HmDialog',
+  name: 'XwDialog',
   props: {
     title: {
       type: String,
@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 // scoped会给当前组件的模板中的所有的元素都添加一个随机的属性
 // scoped会给当前组件中所有的样式 页添加一个对应的的属性选择器
-.hm-dialog__wrapper {
+.xw-dialog__wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -67,7 +67,7 @@ export default {
   z-index: 2001;
   background-color: rgba(0,0,0, .5);
 
-  .hm-dialog {
+  .xw-dialog {
     position: relative;
     margin: 15vh auto 50px;
     background: #fff;
@@ -78,12 +78,12 @@ export default {
 
     &__header {
       padding: 20px 20px 10px;
-      .hm-dialog__title {
+      .xw-dialog__title {
         line-height: 24px;
         font-size: 18px;
         color: #303133;
       }
-      .hm-dialog__headerbtn {
+      .xw-dialog__headerbtn {
         position: absolute;
         top: 20px;
         right: 20px;

@@ -1,7 +1,7 @@
 <template>
-  <div class="hm-form-item">
-    <label class="hm-form-item__label" :style="{width: this.Form.labelWidth}">{{label}}</label>
-    <div class="hm-form-item__content">
+  <div class="xw-form-item">
+    <label class="xw-form-item__label" :style="{width: this.Form.labelWidth}">{{label}}</label>
+    <div class="xw-form-item__content">
       <slot></slot>
     </div>
   </div>
@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'HmFormItem',
+  name: 'XwFormItem',
   props: {
     label: String
   },
@@ -18,9 +18,9 @@ export default {
 </script>
 
 <style lang="scss">
-.hm-form-item {
+.xw-form-item {
   margin-bottom: 25px;
-  .hm-form-item__label {
+  .xw-form-item__label {
     text-align: right;
     vertical-align: middle;
     float: left;
@@ -30,7 +30,7 @@ export default {
     padding: 0 12px 0 0;
     box-sizing: border-box;
   }
-  .hm-form-item__content {
+  .xw-form-item__content {
     line-height: 40px;
     position: relative;
     font-size: 14px;

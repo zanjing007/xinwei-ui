@@ -1,12 +1,12 @@
 <template>
-  <div class="hm-form">
+  <div class="xw-form">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HmForm',
+  name: 'XwForm',
   props: {
     model: {
       type: Object,

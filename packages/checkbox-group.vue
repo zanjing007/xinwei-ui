@@ -1,12 +1,12 @@
 <template>
-  <div class="hm-checkbox-group">
+  <div class="xw-checkbox-group">
     <slot></slot>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HmCheckboxGroup',
+  name: 'XwCheckboxGroup',
   props: {
     value: {
       type: Array

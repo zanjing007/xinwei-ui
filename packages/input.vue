@@ -1,8 +1,8 @@
 <template>
-  <div class="hm-input" :class="{'hm-input--suffix': showSuffix}">
+  <div class="xw-input" :class="{'xw-input--suffix': showSuffix}">
     <!-- 如果传了show-password, 判断是否需要切换 密码的显示 如果不传，不判断 -->
     <input
-      class="hm-input__inner"
+      class="xw-input__inner"
       :class="{'is-disabled': disabled}"
       :placeholder="placeholder"
       :type="showPassword ? (passwordVisible ? 'text':'password') : type"
@@ -11,9 +11,9 @@
       :value="value"
       @input="handleInput"
     >
-    <span class="hm-input__suffix" v-if="showSuffix">
-      <i class="hm-input__icon hm-icon-circle-close" v-if="clearable && value" @click="clear"></i>
-      <i class="hm-input__icon hm-icon-view"
+    <span class="xw-input__suffix" v-if="showSuffix">
+      <i class="xw-input__icon hm-icon-circle-close" v-if="clearable && value" @click="clear"></i>
+      <i class="xw-input__icon hm-icon-view"
         v-if="showPassword"
         @click="handlePassword"
         :class="{'hm-icon-view-active':passwordVisible}"
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'HmInput',
+  name: 'XwInput',
   data () {
     return {
       // 用于控制是否显示密码框
@@ -82,12 +82,12 @@ export default {
 </script>
 
 <style lang="scss">
-.hm-input {
+.xw-input {
   width: 100%;
   position: relative;
   font-size: 14px;
   display: inline-block;
-  .hm-input__inner {
+  .xw-input__inner {
     -webkit-appearance: none;
     background-color: #fff;
     background-image: none;
@@ -117,11 +117,11 @@ export default {
   }
 }
 
-.hm-input--suffix {
-  .hm-input__inner {
+.xw-input--suffix {
+  .xw-input__inner {
     padding-right: 30px;
   }
-  .hm-input__suffix {
+  .xw-input__suffix {
     position: absolute;
     height: 100%;
     right: 10px;

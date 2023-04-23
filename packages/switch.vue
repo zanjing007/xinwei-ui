@@ -1,20 +1,20 @@
 <template>
-  <div class="hm-switch" :class="{'is-checked': value}" @click="handleClick">
+  <div class="xw-switch" :class="{'is-checked': value}" @click="handleClick">
     <input
-      class="hm-switch__input"
+      class="xw-switch__input"
       type="checkbox"
       :name="name"
       ref="input"
     >
-    <span class="hm-switch__core" ref="core">
-      <span class="hm-switch__button"></span>
+    <span class="xw-switch__core" ref="core">
+      <span class="xw-switch__button"></span>
     </span>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HmSwitch',
+  name: 'XwSwitch',
   props: {
     value: {
       type: Boolean,
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-.hm-switch {
+.xw-switch {
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -71,14 +71,14 @@ export default {
   line-height: 20px;
   height: 20px;
   vertical-align: middle;
-  .hm-switch__input {
+  .xw-switch__input {
     position: absolute;
     width: 0;
     height: 0;
     opacity: 0;
     margin: 0;
   }
-  .hm-switch__core {
+  .xw-switch__core {
     margin: 0;
     display: inline-block;
     position: relative;
@@ -92,7 +92,7 @@ export default {
     cursor: pointer;
     transition: border-color .3s,background-color .3s;
     vertical-align: middle;
-    .hm-switch__button {
+    .xw-switch__button {
       position: absolute;
       top: 1px;
       left: 1px;
@@ -104,11 +104,11 @@ export default {
     }
   }
 }
-.hm-switch.is-checked {
-  .hm-switch__core {
+.xw-switch.is-checked {
+  .xw-switch__core {
     border-color: #409eff;
     background-color: #409eff;
-    .hm-switch__button {
+    .xw-switch__button {
       transform: translateX(20px);
     }
   }

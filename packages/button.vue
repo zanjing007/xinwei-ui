@@ -1,5 +1,5 @@
 <template>
-  <button class="hm-button" :class="[`hm-button--${type}`, {
+  <button class="xw-button" :class="[`xw-button--${type}`, {
     'is-plain': plain,
     'is-round': round,
     'is-circle': circle,
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: 'HmButton',
+  name: 'XwButton',
   // 封装一个通用的组件，会对props做一个约束，props进行校验
   props: {
     type: {
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.hm-button {
+.xw-button {
   display: inline-block;
   line-height: 1;
   white-space: nowrap;
@@ -84,7 +84,7 @@ export default {
   }
 }
 
-.hm-button--primary {
+.xw-button--primary {
   color: #fff;
   background-color: #409eff;
   border-color: #409eff;
@@ -96,7 +96,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--success {
+.xw-button--success {
   color: #fff;
   background-color: #67c23a;
   border-color: #67c23a;
@@ -107,7 +107,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--info {
+.xw-button--info {
   color: #fff;
   background-color: #909399;
   border-color: #909399;
@@ -118,7 +118,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--warning {
+.xw-button--warning {
   color: #fff;
   background-color: #e6a23c;
   border-color: #e6a23c;
@@ -129,7 +129,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--danger {
+.xw-button--danger {
   color: #fff;
   background-color: #f56c6c;
   border-color: #f56c6c;
@@ -142,7 +142,7 @@ export default {
 }
 
 // 朴素的按钮
-.hm-button.is-plain {
+.xw-button.is-plain {
   &:hover,
   &:focus {
     background: #fff;
@@ -150,7 +150,7 @@ export default {
     color: #409eff;
   }
 }
-.hm-button--primary.is-plain {
+.xw-button--primary.is-plain {
   color: #a2a8ad;
   background: #ecf5ff;
   border-color: #b3d8ff;
@@ -161,7 +161,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--success.is-plain {
+.xw-button--success.is-plain {
   color: #67c23a;
   background: #f0f9eb;
   border-color: #c2e7b0;
@@ -173,7 +173,7 @@ export default {
   }
 }
 
-.hm-button--info.is-plain {
+.xw-button--info.is-plain {
   color: #909399;
   background: #f4f4f5;
   border-color: #d3d4d6;
@@ -184,7 +184,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--warning.is-plain {
+.xw-button--warning.is-plain {
   color: #e6a23c;
   background: #fdf6ec;
   border-color: #f5dab1;
@@ -195,7 +195,7 @@ export default {
     color: #fff;
   }
 }
-.hm-button--danger.is-plain {
+.xw-button--danger.is-plain {
   color: #f56c6c;
   background: #fef0f0;
   border-color: #fbc4c4;
@@ -207,18 +207,18 @@ export default {
   }
 }
 
-.hm-button.is-round {
+.xw-button.is-round {
   border-radius: 20px;
   padding: 12px 23px;
 }
 
 // 原形按钮
-.hm-button.is-circle {
+.xw-button.is-circle {
   border-radius: 50%;
   padding: 12px;
 }
 
-.hm-button [class*=hm-icon-]+span {
+.xw-button [class*=hm-icon-]+span {
     margin-left: 5px;
 }
 </style>
